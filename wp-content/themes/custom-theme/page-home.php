@@ -50,7 +50,7 @@ Template Name: Homepage
                 $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
             }
         ?>
-        <div class="col-md-4 left no-space gallery-item">
+        <div class="col-sm-4 two-row left no-space gallery-item">
 			<a href="<?php echo $post->guid; ?>">
 			<img class="gallery-cover" src="<?php echo $image[0]; ?>"/>	
 			<div class="gallery-description-default">

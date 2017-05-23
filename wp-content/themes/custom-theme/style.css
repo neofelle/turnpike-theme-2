@@ -217,9 +217,11 @@ i.fa.fa-circle.right {
     font-size: 6px;
     margin-left: 20px;
 }
+
 .banner-p{
   width: 800px;margin: 0 auto;
 }
+
 .p-service {
     font-size: 18px;
 }
@@ -256,7 +258,7 @@ nav#nav {
     text-align: left;
     margin: 0 auto;
     font-size: 40px;
-    line-height: 5px;
+    line-height: 30px;
 }
 .txt-slider-inner {
     padding-bottom: 0px !important;
@@ -445,7 +447,7 @@ h3.gallery-default{
     text-align: center;
 }
 .sl-inner {
-    padding-top: 185px;
+    padding-top: 170px;
     text-align: left;
 }
 .padding{
@@ -591,6 +593,19 @@ h3.gallery-default{
     nav#nav {
      padding-left: 0px !important;
     }
+    #nav > ul {
+        padding-top: 0px;
+        height: 52px;
+        /* 60 */
+        background-color: rgba(243, 245, 243, 0);
+
+    }
+    li.smaller-li:hover {
+        background-color: #d61020;
+    }
+    #nav>ul>li {
+        height: 45px;
+    }
     .mobile-nav {
         width: 60% !important;
     }
@@ -637,9 +652,10 @@ h3.gallery-default{
         /* 50 */
         text-align: left;
         text-indent: -9999px;
-        background-color:#0097d6;
+        background-color: #d61020;
         position: relative;
-        top: 8px;
+        top: 27px;
+        right: 10px;
     }
     #nav > a:before,
     #nav > a:after {
@@ -668,12 +684,15 @@ h3.gallery-default{
     }
     /* first level */
     #nav > ul {
+        border: 1px solid #717171 !important;
         height: auto;
         display: none;
         position: absolute;
-        left: 0;
-        right: 0;
-        background-color: #f3f5f3 !important;
+        left: 0px;
+        top: 79px;
+        margin-left: -10px;
+        right: 0px;
+        background-color: #2a2d2a !important;
         margin-top: 0px !important;
     }
     .menu-header {
@@ -703,7 +722,7 @@ h3.gallery-default{
     }
     #nav > ul > li:not(:last-child) > a {
         border-right: none;
-        border-bottom: 1px solid #c1b3ad;
+        border-bottom: 1px solid #b3b3b3;
         width: 100% !important;
     }
     /* second level */
@@ -801,6 +820,40 @@ img.left.default-img {
     }
 
 }
+@media (max-width: 1225px) {
+    img.custom-logo {
+        width: 330px;
+        height: 140px;
+        position: absolute;
+        top: 19px;
+        left: 70px;
+    }
+}
+@media (max-width: 1199px) {
+    .footer-content > div{
+        margin-bottom:50px;
+    }
+    ul.clearfix.menu-header {
+        margin-left: 18%;
+    }
+    img.custom-logo {
+        width: 225px;
+        height: 78px;
+        position: absolute;
+        top: 57px;
+        left: 30px !important;
+    }
+}
+@media (max-width: 992px) {
+    .center-mobile{
+        text-align: center !important;
+        float: left !important;
+        width: 100%;
+    }
+    .line-header{
+        height: 94px !important;
+    }
+}
 @media (max-width: 861px) {
     .owl-slider > p {
         width: 90% !important;
@@ -809,12 +862,40 @@ img.left.default-img {
       width: 80% !important;
     }
 }
+@media (max-width: 767px) {
+    .two-row{
+        width:50% !important;
+    }
+    .col-xs-12.col-sm-6.col-md-4.footer-services.left {
+        text-align: center;
+    }
+    .col-xs-12.col-sm-6.col-md-4.footer-information.left{
+        text-align: center;
+    }
+    img.left.default-img{
+        width: 100%;
+    }
+}
 @media (max-width: 746px) {
+    .logo{
+        z-index: 2 !important;
+    }
     .txt-slider {
         font-size: 36px !important;
+        line-height: 36px !important;
+    }
+    .submit-button-slider{
+        font-size: 19px !important;
     }
     .owl-slider > p {
         width: 70% !important;
+    }
+    img.custom-logo {
+        width: 190px;
+        height: 70px;
+        position: absolute;
+        top: 60px;
+        left: 10px !important;
     }
 }
 @media (max-width: 607px) {
@@ -824,11 +905,37 @@ img.left.default-img {
     .owl-slider > p {
         width: 65% !important;
     }
+    .footer-note {
+        font-size: 11px !important;
+        font-weight: 400 !important;
+        line-height: 22px;
+    }
+    .page-title{
+        font-size: 29px !important;
+    }
+    .page-description {
+        font-weight: 100;
+        font-size: 19px !important;
+        font-family: sans-serif;
+    }
+    .txt-banner-footer{
+        font-size: 31px !important;
+    }
+    .footer-banner-description{
+        width: 90% !important;
+    }
 }
+@media (max-width: 560px) {
+    .two-row{
+        width:100% !important;
+    }
+}
+
 @media (max-width: 470px) {
     .txt-slider {
-        font-size: 23px !important;
+        font-size: 27px !important;
     }
+
     .owl-slider > p {
         width: 90% !important;
     }

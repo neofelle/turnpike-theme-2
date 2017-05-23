@@ -1,6 +1,6 @@
 <section class="footer" style="background-color: #efefef;margin-top: 15px;padding-top: 70px !important;padding-bottom: 25px !important;">
   <div class="container footer-content">
-    <div class="col-md-4 footer-services left">
+    <div class="col-xs-12 col-sm-6 col-md-4 footer-services left">
       <h4 class="title-footer">SERVICES</h4>
       <?php 
         $menuargs = array(
@@ -14,22 +14,22 @@
         <h4 class="text-footer"><a class="light-grey" href="<?php echo $i->url; ?>"><?php echo $i->title; ?></a></h4>
       <?php } ?>      
     </div>
-    <div class="col-md-4 footer-information left">
+    <div class="col-xs-12  col-sm-6 col-md-4 footer-information left">
       <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-1') ) : ?>
       <?php endif; ?>
     </div>
-      <div class="col-md-4 left">
-       <img style="width: 100%;height: 100%";" src="<?php echo get_template_directory_uri() . "/assets/images/home/map.png"; ?>"/> 
+      <div class="col-xs-12 col-sm-6 col-md-4 left">
+       <img style="width: 100%;height: 100%"; max-height: 400px;" src="<?php echo get_template_directory_uri() . "/assets/images/home/map.png"; ?>"/> 
       </div>
   </div>
 </section>
 <section class="footer-copyright" style="background-color: #efefef;padding-top: 0px;padding-bottom: 15px;">
   <div class="container">
-    <div class="col-md-7 left">
-      <p class="" style="color: #7b7b7b;font-weight: bold;font-size: 16px;">© 2017 Turnpike Furnace & Duct Cleaning Company – All Rights Reserved</p>
+    <div class="col-sm-12 center-mobile col-md-7 left">
+      <p class="footer-note" style="color: #7b7b7b;font-weight: bold;font-size: 16px;">© 2017 Turnpike Furnace & Duct Cleaning Company – All Rights Reserved</p>
     </div>
-    <div class="col-md-5 right">
-      <a class="" href="#" style="text-align:right;color: #7b7b7b;font-weight: bold;font-size: 16px;float: right;">Terms of Service and Privacy Policy</a>
+    <div class="col-sm-12 center-mobile col-md-5 right">
+      <a class="center-mobile footer-note" href="#" style="text-align:right;color: #7b7b7b;font-weight: bold;font-size: 16px;float: right;">Terms of Service and Privacy Policy</a>
     </div>
   </div>
 </section>

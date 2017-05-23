@@ -8,7 +8,7 @@
                     $cf_header_text_b = get_post_meta($post->ID, 'header_text_b', true);                      
                 ?>  
 				<h1 class="page-title color-white bold"><?php echo $cf_header_text_a; ?></h1>
-				<h1 class="page-description bold" style="color: #e6e6e6;"><?php echo $cf_header_text_b; ?></h1>
+				<h1 class="page-description bold" style=" margin-top: 5px;color: #e6e6e6;"><?php echo $cf_header_text_b; ?></h1>
 		    </div>
 	    </div>
 	</div>
