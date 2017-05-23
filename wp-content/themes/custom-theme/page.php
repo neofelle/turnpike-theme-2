@@ -3,8 +3,12 @@
 	<div class="large-12 columns">
 		<div class="item slider-bg" style="height:280px;display: block;background-image: url('<?php echo get_template_directory_uri() . "/assets/images/home/banner-home-wide.png"; ?>');background-size: cover;">
 		    <div class="container sl-inner">
-				<h1 class="page-title color-white bold">Lorem ipsum</h1>
-				<h1 class="page-description bold" style="color: #e6e6e6;">Morbi accumsan ipsum velit.</h1>
+		    	<?php 
+                    $cf_header_text_a = get_post_meta($post->ID, 'header_text_a', true);                    
+                    $cf_header_text_b = get_post_meta($post->ID, 'header_text_b', true);                      
+                ?>  
+				<h1 class="page-title color-white bold"><?php echo $cf_header_text_a; ?></h1>
+				<h1 class="page-description bold" style="color: #e6e6e6;"><?php echo $cf_header_text_b; ?></h1>
 		    </div>
 	    </div>
 	</div>

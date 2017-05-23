@@ -27,7 +27,14 @@
 	</a>
 </div>
 <div class="col-md-12 padding-25" style="background-color: black;">
-	<p class="left color-white right" style="font-size: 20px;color: #386b08;font-weight: bold;margin-top: 15px;text-align: right;"><a class="color-white" href="tel:+<?php echo str_replace("-", "", $header_number); ?>">1 800 AIR-DUCT</a></p><i class="fa fa-phone left contact-icon color-white right" aria-hidden="true" style="font-size: 20px"></i>
+	<?php                   
+        $header_number    = $GLOBALS['cgv']['default-contact-number'];
+        $cf_header_number = get_post_meta($post->ID, 'header_contact_number', true);                    
+        if( $cf_header_number != "" ){
+            $header_number = $cf_header_number;
+        }
+    ?>
+	<p class="left color-white right" style="font-size: 20px;color: #386b08;font-weight: bold;margin-top: 15px;text-align: right;"><a class="color-white" href="tel:+<?php echo str_replace("-", "", $header_number); ?>"><?php echo $header_number; ?></a></p><i class="fa fa-phone left contact-icon color-white right" aria-hidden="true" style="font-size: 20px"></i>
 </div>
 <section class="header">
 <br class="clear">

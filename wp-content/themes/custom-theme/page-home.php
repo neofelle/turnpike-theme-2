@@ -29,79 +29,43 @@ Template Name: Homepage
 <p class="center">Since 1959,Turnpike Furnace & Duct Company offers expert air duct, boiler and chimney cleaning services to Connecticut as well as to the bordering states of New York and Massachusetts. From office buildings and restaurants, older homes, to newly constructed homes, we specialize in them all. Contact us at 1-800-AIR-DUCT.</p>
 <br class="clear"><Br/>
 <div class="col-md-12 no-space">
-	<div class="col-md-4 left no-space gallery-item">
-		<a href="#">
-		<img class="gallery-cover" src="<?php echo get_template_directory_uri() . "/assets/images/home/service-1.png"; ?>"/>	
-		<h3 style="position: absolute;">Home, Industrial, and Commercial Air Duct Cleaning</h3>
-		<div class="gallery-description-default">
-			<h3 class="gallery-default">Home, Industrial, and Commercial Air Duct Cleaning</h3>
-		</div>		
-		</a>
-	</div>
-	<div class="col-md-4 left no-space gallery-item">
-		<a href="#">
-		<img class="gallery-cover" src="<?php echo get_template_directory_uri() . "/assets/images/home/service-2.png"; ?>"/>	
-		<div class="gallery-description-default">
-			<h3 class="gallery-default">Dryer Duct Cleaning</h3>
-		</div>	
-		</a>
-	</div>
-	<div class="col-md-4 left no-space gallery-item">
-		<a href="#">
-		<img class="gallery-cover" src="<?php echo get_template_directory_uri() . "/assets/images/home/service-3.png"; ?>"/>	
-		<div class="gallery-description-default">
-			<h3 class="gallery-default">Commercial Laundry Duct Cleaning</h3>
-		</div>		
-		</a>
-	</div>
-	<div class="col-md-4 left no-space gallery-item">
-		<a href="#">
-		<img class="gallery-cover" src="<?php echo get_template_directory_uri() . "/assets/images/home/service-5.png"; ?>"/>	
-		<div class="gallery-description-default">
-			<h3 class="gallery-default">Emergency Plugged Chimneys</h3>
-		</div>				
-		</a>
-	</div>
-	<div class="col-md-4 left no-space gallery-item">
-		<a href="#">
-		<img class="gallery-cover" src="<?php echo get_template_directory_uri() . "/assets/images/home/service-6.png"; ?>"/>	
-		<div class="gallery-description-default">
-			<h3 class="gallery-default">Residential Chimney Cleaning</h3>
-		</div>		
-		</a>
-	</div>
-	<div class="col-md-4 left no-space gallery-item">
-		<a href="#">
-		<img class="gallery-cover" src="<?php echo get_template_directory_uri() . "/assets/images/home/service-7.png"; ?>"/>	
-		<div class="gallery-description-default">
-			<h3 class="gallery-default">Industrial  Boiler Cleaning</h3>
-		</div>	
-		</a>
-	</div>
-	<div class="col-md-4 left no-space gallery-item">
-		<a href="#">
-		<img class="gallery-cover" src="<?php echo get_template_directory_uri() . "/assets/images/home/service-4.png"; ?>"/>	
-		<div class="gallery-description-default">
-			<h3 class="gallery-default">Repair Of Laundry Ductwork</h3>
-		</div>	
-		</a>
-	</div>
-	<div class="col-md-4 left no-space gallery-item">
-		<a href="#">
-		<img class="gallery-cover" src="<?php echo get_template_directory_uri() . "/assets/images/home/service-8.png"; ?>"/>	
-		<div class="gallery-description-default">
-			<h3 class="gallery-default">Chimney Cap Installations</h3>
-		</div>	
-		</a>
-	</div>
-	<div class="col-md-4 left no-space gallery-item">
-		<a href="#">
-		<img class="gallery-cover" src="<?php echo get_template_directory_uri() . "/assets/images/home/service-9.png"; ?>"/>	
-		<div class="gallery-description-default">
-			<h3 class="gallery-default">Industrial Stack and Breeching Cleaning</h3>
-		</div>	
-		</a>
-	</div>
+	<?php    
+        $args = array(
+        'post_type' => 'services',
+        'posts_per_page' => 9,
+        'order' => 'ASC'
+        );
+         
+        $the_query = new WP_Query( $args );
+         
+        if ( $the_query->have_posts() ) {
+        while ( $the_query->have_posts() ) {
+        $the_query->the_post();
+        $cf_excerpt = get_post_meta($post->ID, 'services_excerpt', $single);            
+    ?>
+
+        <?php 
+            $image = "";
+            if (has_post_thumbnail( $post->ID ) ){
+                $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+            }
+        ?>
+        <div class="col-md-4 left no-space gallery-item">
+			<a href="<?php echo $post->guid; ?>">
+			<img class="gallery-cover" src="<?php echo $image[0]; ?>"/>	
+			<div class="gallery-description-default">
+				<h3 class="gallery-default"><?php echo get_the_title(); ?></h3>
+			</div>	
+			</a>
+		</div>
+    <?php
+        }
+        } else {
+        // no posts found
+        }
+        /* Restore original Post Data */
+        wp_reset_postdata();         
+    ?>
 </div>
 
 </section>

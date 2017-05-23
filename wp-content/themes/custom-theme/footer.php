@@ -15,30 +15,12 @@
       <?php } ?>      
     </div>
     <div class="col-md-4 footer-information left">
-      <h4 class="title-footer">CONTACT US</h4>
-        <h4 class="text-footer">Turnpike Furnace & Duct Cleaning Company</h4>
-        <h4 class="text-footer">33 Hull Street, Shelton, CT 06484</h4>
-
-        <h4 class="text-footer" style="margin-top:20px;margin-bottom: 20px;">clean@turnpikefurnace.com</h4>
-
-        <h4 class="text-footer">Phone: 203 336-1483</h4>
-        <h4 class="text-footer">Fax: 203 924-2301</h4>
-        <br/>
-        <div class="col-md-12 no-space">
-          <div class="col-md-2 left no-space">
-            <a href="#"><img style="width: 100%;height: 100%;max-height: 45px;max-width: 45px;";" src="<?php echo get_template_directory_uri() . "/assets/images/footer/facebook-icon.png"; ?>"/></a> 
-          </div>
-          <div class="col-md-2 left no-space">
-            <a href="#"><img style="width: 100%;height: 100%;max-height: 45px;max-width: 45px;";" src="<?php echo get_template_directory_uri() . "/assets/images/footer/linked-in-icon.png"; ?>"/></a>  
-          </div>
-          <div class="col-md-2 left no-space">
-            <a href="#"><img style="width: 100%;height: 100%;max-height: 45px;max-width: 45px;";" src="<?php echo get_template_directory_uri() . "/assets/images/footer/google-icon.png"; ?>"/></a>  
-          </div>
-        </div>
+      <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-1') ) : ?>
+      <?php endif; ?>
     </div>
       <div class="col-md-4 left">
        <img style="width: 100%;height: 100%";" src="<?php echo get_template_directory_uri() . "/assets/images/home/map.png"; ?>"/> 
-    </div>
+      </div>
   </div>
 </section>
 <section class="footer-copyright" style="background-color: #efefef;padding-top: 0px;padding-bottom: 15px;">
